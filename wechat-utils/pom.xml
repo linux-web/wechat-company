@@ -13,4 +13,18 @@
 	<name>Wechat Utils</name>
 	<description>Utils for this Project.</description>
 
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+
+		<finalName>${project.artifactId}-${project.version}</finalName>
+
+	</build>
+
 </project>

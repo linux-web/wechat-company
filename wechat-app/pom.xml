@@ -29,7 +29,9 @@
 	</dependencies>
 
 	<build>
-		<finalName>wechat-app</finalName>
+
+		<finalName>${project.artifactId}-${project.version}</finalName>
+
 	</build>
 
 </project>
