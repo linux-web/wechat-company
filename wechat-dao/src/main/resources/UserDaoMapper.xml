@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.mcm.dao.sql.user.UserDao">
+
+	<!-- 插入用户信息 -->
+	<insert id="insertUserInfo" parameterType="InsertUserInfo">
+		INSERT INTO
+	</insert>
+
+
+	<!-- 更新用户信息 -->
+	<update id="updateUserInfo" parameterType="InsertUserInfo">
+	</update>
+
+	<!-- 获取用户信息 -->
+	<select id="selectUserInfo" parameterType="SelectUserInfoParams"
+		resultType="SelectUserInfo">
+	</select>
+
+	<!-- 删除用户信息 -->
+	<delete id="deleteUserInfo" parameterType="SelectUserInfoParams">
+
+	</delete>
+
+</mapper>

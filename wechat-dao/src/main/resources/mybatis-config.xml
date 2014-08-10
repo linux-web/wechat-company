@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="data_db.properties">
+		<property name="db_driver" value="com.mysql.jdbc.Driver" />
+		<property name="db_encoding" value="UTF8" />
+	</properties>
+	<typeAliases>
+		<!-- 用户信息相关 -->
+		<typeAlias alias="InsertUserInfo" type="edu.mcm.dao.sql.user.InsertUserInfo" />
+		<typeAlias alias="SelectUserInfoParams" type="edu.mcm.dao.sql.user.SelectUserInfoParams" />
+		<typeAlias alias="SelectUserInfo" type="edu.mcm.dao.sql.user.SelectUserInfo" />
+	</typeAliases>
+	<environments default="test">
+		<environment id="test">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="url" value="${edu.db.url}" />
+				<property name="username" value="${edu.db.username}" />
+				<property name="password" value="${edu.db.password}" />
+				<property name="driver" value="${db_driver}" />
+				<property name="driver.encoding" value="${db_encoding}" />
+				<property name="poolPingEnabled" value="true" />
+				<property name="poolPingQuery" value="select 1" />
+				<property name="poolPingConnectionsNotUsedFor" value="5000" />
+			</dataSource>
+		</environment>
+		<environment id="product">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="url" value="${edu.db.url}" />
+				<property name="username" value="${edu.db.username}" />
+				<property name="password" value="${edu.db.password}" />
+				<property name="driver" value="${db_driver}" />
+				<property name="driver.encoding" value="${db_encoding}" />
+				<property name="poolPingEnabled" value="true" />
+				<property name="poolPingQuery" value="select 1" />
+				<property name="poolPingConnectionsNotUsedFor" value="5000" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="UserDaoMapper.xml" />
+	</mappers>
+</configuration>
+	
