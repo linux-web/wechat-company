@@ -1,9 +1,80 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>zx.soft</groupId>
-  <artifactId>wechat-company</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>Wechat Company</name>
-  <description>Wechat Application for Company,eg. Communaction,Information,and so on.</description>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>zx.soft</groupId>
+		<artifactId>wechat-parent</artifactId>
+		<version>1.0.0</version>
+		<relativePath>wechat-parent/pom.xml</relativePath>
+	</parent>
+
+	<artifactId>wechat-company</artifactId>
+	<packaging>pom</packaging>
+	<name>Wechat Company</name>
+	<description>Wechat Application for Company,eg. Communaction,Information,and so on.</description>
+
+	<modules>
+		<module>wechat-parent</module>
+		<module>wechat-utils</module>
+		<module>wechat-dao</module>
+		<module>wechat-lucene</module>
+		<module>wechat-core</module>
+		<module>wechat-app</module>
+	</modules>
+
+	<build>
+		<plugins>
+			<!-- 源码打包插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- JDK编译版本 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<inceptionYear>2014</inceptionYear>
+
+	<licenses>
+		<license>
+			<name>Apache 2</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>all</distribution>
+			<comments>Copyright 2014 (c) Gang Wang - All Right Reserved</comments>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>wgybzb</id>
+			<name>Gang Wang</name>
+			<email>wanggang@zxisl.com</email>
+			<url>http://github.com/wgybzbrobot</url>
+			<roles>
+				<role>ReleaseManager</role>
+				<role>Designer</role>
+				<role>Developer</role>
+			</roles>
+			<timezone>UTC-8</timezone>
+		</developer>
+	</developers>
+
 </project>
