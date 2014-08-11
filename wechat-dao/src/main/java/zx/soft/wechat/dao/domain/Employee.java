@@ -12,7 +12,7 @@ import java.util.List;
 public class Employee {
 
 	// 个人信息
-	private final Person persion;
+	private final Person person;
 	// 教育信息
 	private final List<Education> educations;
 	// 工作履历
@@ -21,7 +21,7 @@ public class Employee {
 	private final CurrentJob currentJob;
 
 	public Employee(Builder builder) {
-		this.persion = builder.persion;
+		this.person = builder.person;
 		this.educations = builder.educations;
 		this.careers = builder.careers;
 		this.currentJob = builder.currentJob;
@@ -29,13 +29,13 @@ public class Employee {
 
 	public static class Builder {
 
-		private Person persion = null;
+		private Person person = null;
 		private List<Education> educations = new ArrayList<>();
 		private List<Career> careers = new ArrayList<>();
 		private CurrentJob currentJob = null;
 
-		public Builder(Person persion) {
-			this.persion = persion;
+		public Builder(Person person) {
+			this.person = person;
 		}
 
 		public Builder setEducation(List<Education> educations) {
@@ -59,8 +59,8 @@ public class Employee {
 
 	}
 
-	public Person getPersion() {
-		return persion;
+	public Person getPerson() {
+		return person;
 	}
 
 	public List<Education> getEducation() {

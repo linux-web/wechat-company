@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.mcm.dao.sql.user.UserDao">
+
+	<!-- 插入员工信息 -->
+	<insert id="insertEmployee" parameterType="InsertEmployee">
+		INSERT INTO
+		${tablename}
+		(`uid`,`person`,`educations`,`careers`,`currentJob`,`lasttime`) VALUES
+		(#{uid},#{person},#{educations},#{careers},#{currentJob},UNIX_TIMESTAMP());
+	</insert>
+
+	<!-- 读取员工信息：根据工号 -->
+	<select id="selectEmployeeById" parameterType="SelectParams"
+		resultType="SelectEmployee">
+		SELECT `uid`,`person`,`educations`,`careers`,`currentJob` FROM ${tablename}
+		WHERE `uid` = #{uid};
+	</select>
+
+	<!-- 更新员工信息 -->
+	<update id="updateEmployee" parameterType="InsertEmployee">
+		UPDATE ${tablename} SET `person` = #{person},`educations` =
+		#{educations},`careers` = #{careers},`currentJob` = #{currentJob} WHERE `uid` = #{uid};
+	</update>
+
+	<!-- 删除员工信息 -->
+	<delete id="deleteEmployee" parameterType="SelectParams">
+	    DELETE FROM ${tablename} WHERE `uid` = #{uid};
+	</delete>
+
+</mapper>
