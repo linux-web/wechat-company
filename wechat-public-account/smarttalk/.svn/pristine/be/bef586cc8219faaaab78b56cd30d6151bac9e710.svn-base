@@ -1,0 +1,13 @@
+#服务标签
+tag = reply
+
+#各个环境下的 host 地址
+
+#正式环境地址
+host.production = http://duihua.svc.pp.cc
+
+#测试环境地址
+host.testing = http://test.rp.svc.pp.cc
+
+#开发环境
+host.development = http://reply.svc.pp.info

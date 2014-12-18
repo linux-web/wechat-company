@@ -1,0 +1,62 @@
+package cc.pp.weixin.domain.message.request;
+
+import org.dom4j.Element;
+
+import cc.pp.weixin.constant.MsgFieldName;
+import cc.pp.weixin.constant.MsgType;
+
+
+/**
+ * 微信公众平台文本消息
+ * @author wgybzb
+ * @since  2013-04-06
+ */
+public class VoiceRequestMessage extends RequestMessage {
+	/**
+	 * 默认的序列化版本号
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 音频ID
+	 */
+	private String mediaId;
+	public String getMediaId() {
+		return mediaId;
+	}
+	public void setMediaId(String mediaId) {
+		this.mediaId = mediaId;
+	}
+
+	/**
+	 * 音频格式
+	 */
+	private String format;
+	public String getFormat() {
+		return format;
+	}
+	public void setFormat(String format) {
+		this.format = format;
+	}
+
+	/**
+	 * 默认消息类型为 文本消息
+	 */
+	public VoiceRequestMessage() {
+		this.msgType = MsgType.VOICE;
+	}
+
+	/**
+	 * 构造函数：根据微信平台的请求数据，封装链接消息属性
+	 */
+	public VoiceRequestMessage(Element element) {
+		//调用父类的构造方法，初始化通用信息
+		super(element);
+
+		if (element == null){
+			return;
+		}
+		this.mediaId = element.elementText(MsgFieldName.MEDIA_ID);
+		this.format = element.elementText(MsgFieldName.FORMAT);
+	}
+}

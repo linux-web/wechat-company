@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+		<groupId>cc.pp.media</groupId>
+		<artifactId>weixin</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>weixin-common</artifactId>
+  <version>${weixin.version}</version>
+  <name>weixin-common</name>
+  <url>http://maven.apache.org</url>
+  
+  <!-- 公用变量 -->
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <dependencies>
+  <!-- 通用处理工具类 -->
+	<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>dom4j</groupId>
+		<artifactId>dom4j</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>commons-lang</groupId>
+		<artifactId>commons-lang</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>com.belerweb</groupId>
+		<artifactId>pinyin4j</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+	</dependency>
+	<!-- Http工具类 -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>servlet-api</artifactId>
+	</dependency> 
+	<dependency>
+		<groupId>commons-httpclient</groupId>
+		<artifactId>commons-httpclient</artifactId>
+	</dependency>
+
+	<!-- JSON工具类 -->
+	<dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-mapper-lgpl</artifactId>
+	</dependency>
+
+	<!-- 框架 -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring</artifactId>
+	</dependency>
+  </dependencies>
+  
+  <!-- 打包配置 -->
+  <build>
+	 <!-- <finalName>weixin-common</finalName> -->
+	 <resources>
+		<resource>
+			<directory>src/main/resources</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+			<filtering>true</filtering>
+		</resource>
+	</resources>
+   </build>
+</project>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="customReplyManager" class="cc.pp.weixin.custom.replay.manager.impl.DefaultCustomReplyManager">
+		<property name="customReplyDAO" ref="customReplyDAO" />
+	</bean>
+</beans>
+

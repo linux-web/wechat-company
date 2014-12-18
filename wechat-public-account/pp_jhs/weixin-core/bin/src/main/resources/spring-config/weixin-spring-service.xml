@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="customReplyService" class="cc.pp.weixin.custom.replay.service.impl.DefaultCustomReplyService">
+		<property name="customReplyManager" ref="customReplyManager" />
+		<property name="ruleService" ref="ruleService" />
+	</bean>
+	<bean id="ruleService" class="client.replay.impl.DefaultRuleService" />
+</beans>
+
