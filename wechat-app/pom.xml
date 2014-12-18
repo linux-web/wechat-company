@@ -4,34 +4,48 @@
 
 	<parent>
 		<groupId>zx.soft</groupId>
-		<artifactId>wechat-parent</artifactId>
-		<version>1.0.0</version>
-		<relativePath>../wechat-parent/pom.xml</relativePath>
+		<artifactId>wechat-company</artifactId>
+		<version>1.1.0</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<artifactId>wechat-app</artifactId>
 	<packaging>war</packaging>
-	<name>wechat-app Maven Webapp</name>
+	<name>Wechat App Maven Webapp</name>
 	<description>Web Application of this Project.</description>
-
-	<url>http://maven.apache.org</url>
 
 	<dependencies>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>wechat-core</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- 日志包 -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-access</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
 		</dependency>
 	</dependencies>
 
 	<build>
-
 		<finalName>${project.artifactId}-${project.version}</finalName>
-
 	</build>
 
 </project>

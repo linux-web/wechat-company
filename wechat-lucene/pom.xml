@@ -4,9 +4,9 @@
 
 	<parent>
 		<groupId>zx.soft</groupId>
-		<artifactId>wechat-parent</artifactId>
-		<version>1.0.0</version>
-		<relativePath>../wechat-parent/pom.xml</relativePath>
+		<artifactId>wechat-company</artifactId>
+		<version>1.1.0</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<artifactId>wechat-lucene</artifactId>

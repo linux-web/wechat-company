@@ -1,7 +1,43 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>微信公共平台开发者接口</display-name>
+	<filter>
+		<filter-name>WeChatFilter</filter-name>
+		<filter-class>wechat.core.control.WeChatFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>WeChatFilter</filter-name>
+		<url-pattern>/wechat/*</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>WeChatPayServlet</servlet-name>
+		<servlet-class>wechat.app.web.WeChatPayServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WeChatPayServlet</servlet-name>
+		<url-pattern>/wechat-pay/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>WeChatPayNotifyServlet</servlet-name>
+		<servlet-class>wechat.app.web.WeChatPayNotifyServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WeChatPayNotifyServlet</servlet-name>
+		<url-pattern>/wechat-pay-notify/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+        <servlet-name>WeChatPay</servlet-name>
+        <servlet-class>wechat.app.web.WeChatPayFeedbBackServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WeChatPay</servlet-name>
+        <url-pattern>/wechat-pay-feedbback/*</url-pattern>
+    </servlet-mapping>
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
 </web-app>
